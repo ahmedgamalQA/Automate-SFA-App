@@ -1,0 +1,9 @@
+{
+  "deviceName": "POCO M3",
+  "udid": "d8655e260521",
+  "platformName": "Android",
+  "platformVersion": "12",
+  "automationName": "uiAutomator2",
+  "appPackage": "com.lostFound.newapp",
+  "appActivity": "com.lostFound.newapp.MainActivity"
+}
