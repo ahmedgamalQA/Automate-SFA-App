@@ -47,7 +47,7 @@ Below is an example of how you can install and set up the project.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ahmedgamalQA/Automate-SFA--Appium.git
+   git clone https://github.com/ahmedgamalQA/Automate-SFA-App.git
    ```
 3. Update the `desiredCapabilities.json` file with your `deviceName`, `deviceID` and `platformVersion` in the project structure found at `src/main/resources/desiredCapabilities.json`
   ```json
@@ -107,35 +107,30 @@ public static AppiumDriver getAppiumDriver() {
 * Syntax -> `obj.method1().method2().method3();`
 * So in our case we made those methods return `this` which refers to the current object.
 ```java
-public PostAdScreen clickOnChooseCategory() {
-    clickOnElement(categoryFieldLocator);
+    public ProfileScreen clickOnProfileScreen(){
+    clickOnElement(profileScreenLocator);
     return this;
 }
 
-public PostAdScreen selectAutomotiveCategory() {
-    clickOnElement(automotiveCategoryLocator);
-    return this;
-}
-
-public PostAdScreen selectCarsSection() {
-    clickOnElement(carsFieldLocator);
+public ProfileScreen clickOnSettings(){
+    clickOnElement(settingsLocator);
     return this;
 }
 ```
 * So in our Test part instead of calling methods like this:
 ```java
 public void test() {
-    postAdScreen.clickOnChooseCategory();
-    postAdScreen.selectAutomotiveCategory();
-    postAdScreen.selectCarsSection();
+    profileScreen.clickOnProfileScreen();
+    profileScreen.clickOnSettings();
+    profileScreen.switchLanguage();
 }
 ```
 * We do this:
 ```java
 public void test() {
-    postAdScreen.clickOnChooseCategory()
-                .selectAutomotiveCategory()
-                .selectCarsSection();
+    profileScreen.clickOnProfileScreen()
+            .clickOnSettings()
+            .switchLanguage();
 }
 ```
 ## Static Factory Method
